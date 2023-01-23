@@ -7,14 +7,20 @@ public class Main {
         Customer customer2 = new Customer("Mehmet", "Gazi", "32541798746");
         Customer customer3 = new Customer("Leyla", "Sapmaz", "32578965471");
         Customer customer4 = new Customer("Murat", "Sönmez", "25487632458");
+        Customer customer5 = new Customer("ramazam", "uğurlu", "25487632474");
+        Customer customer6 = new Customer("eylul", "çetin", "27881472474");
         Account hesap1 = new Account("110", "TL", 152, customer1);
         Account hesap2 = new Account("111", "USD", 10, customer2);
         Account hesap3 = new Account("234", "TL", 10, customer3);
         Account hesap4 = new Account("458", "TL", 356.4, customer4);
+        Account hesap5 = new Account("487", "Usd", 234, customer5);
+        Account hesap6 = new Account("174", "tl", 174, customer5);
         bank.accountAdd(hesap1);
         bank.accountAdd(hesap2);
         bank.accountAdd(hesap3);
         bank.accountAdd(hesap4);
+        bank.accountAdd(hesap5);
+        bank.accountAdd(hesap6);
 
 
         while (true) {

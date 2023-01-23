@@ -36,8 +36,13 @@ public class Bank {
 
 
     public void accountAdd(Account account) {
+        try {
+            this.accounts[hesapsayisi++] = account;
+        }catch (ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException){
+            System.out.println("Hesap 4'den fazla olamaz");
+            hesapsayisi--;
+        }
 
-        this.accounts[hesapsayisi++] = account;
     }
 
     public boolean moneyTransfer(String senderAccountNumber, String buyerAccountNumber,double amount) {
