@@ -19,8 +19,8 @@ public class Main {
         bank.accountAdd(hesap2);
         bank.accountAdd(hesap3);
         bank.accountAdd(hesap4);
-        bank.accountAdd(hesap5);//Hesap sayısı en fazla dört olması gerektiği için oluşturulamadı
-        bank.accountAdd(hesap6);//Hesap sayısı en fazla dört olması gerektiği için oluşturulamadı
+        bank.accountAdd(hesap5);//Hesap sayısı en fazla dört olması gerektiği için eklenemedi
+        bank.accountAdd(hesap6);//Hesap sayısı en fazla dört olması gerektiği için eklenemedi
 
 
         while (true) {
