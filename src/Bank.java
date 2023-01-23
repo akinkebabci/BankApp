@@ -47,18 +47,18 @@ public class Bank {
 
     public boolean moneyTransfer(String senderAccountNumber, String buyerAccountNumber,double amount) {
         double senderBalance = 0.0;
-        boolean durum = false;
+        boolean status = false;
         for (int i = 0; i < hesapsayisi; i++) {
             if (accounts[i].getAccountNumber().equals(senderAccountNumber) && accounts[i].getBalance() >= amount) {
                 senderBalance = amount;
                 accounts[i].setBalance(accounts[i].getBalance()-amount);
-                durum = true;
+                status = true;
             }
             if (accounts[i].getAccountNumber().equals(buyerAccountNumber)) {
                 accounts[i].setBalance(accounts[i].getBalance() + senderBalance);
             }
         }
-        return durum;
+        return status;
     }
 
     public static double usdTLCurrencyConvert(double usd) {
