@@ -1,1 +1,1 @@
-##Java Inheritance(Kalıtım)  kullanımını gösteren basit uygulama 
+### Java Inheritance(Kalıtım)  kullanımını gösteren basit uygulama 
