@@ -73,10 +73,8 @@ public class Bank {
         System.out.println("Banka merkez Ofisi : " + this.headOfficeLocation);
         System.out.println("Bankada Bulunan Hesap Sayısı : " + this.hesapsayisi);
         System.out.println("\n***********Banka hesap sahibi müşteriler**************\n");
-        for (int i = 0; i < accounts.length; i++) {
-            if (accounts[i] != null) {
-                accounts[i].showInfo();
-            }
+        for (int i = 0; i < hesapsayisi; i++) {
+            accounts[i].showInfo();
             System.out.println("^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-");
         }
     }
