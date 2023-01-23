@@ -13,14 +13,14 @@ public class Main {
         Account hesap2 = new Account("111", "USD", 10, customer2);
         Account hesap3 = new Account("234", "TL", 10, customer3);
         Account hesap4 = new Account("458", "TL", 356.4, customer4);
-        Account hesap5 = new Account("487", "Usd", 234, customer5);// Hesap sayısı en fazla dört olması gerektiği için oluşturulamadı
-        Account hesap6 = new Account("174", "tl", 174, customer5); //Hesap sayısı en fazla dört olması gerektiği için oluşturulamadı
+        Account hesap5 = new Account("487", "Usd", 234, customer5);
+        Account hesap6 = new Account("174", "tl", 174, customer5);
         bank.accountAdd(hesap1);
         bank.accountAdd(hesap2);
         bank.accountAdd(hesap3);
         bank.accountAdd(hesap4);
-        bank.accountAdd(hesap5);
-        bank.accountAdd(hesap6);
+        bank.accountAdd(hesap5);//Hesap sayısı en fazla dört olması gerektiği için oluşturulamadı
+        bank.accountAdd(hesap6);//Hesap sayısı en fazla dört olması gerektiği için oluşturulamadı
 
 
         while (true) {
