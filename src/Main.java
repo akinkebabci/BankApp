@@ -28,7 +28,8 @@ public class Main {
             System.out.println("-> Para Trasnferi İçin (1)'e Basınız");
             System.out.println("-> Hesap Detayları için (2)'e Basınız");
             System.out.println("-> Usd/Tl Çevirimi çin (3)'e Basınız");
-            System.out.println("-> Çıkma için (4)'e Basınız");
+            System.out.println("-> Hesap Kapatmak için (4)'e Basınız");
+            System.out.println("-> Çıkma için (5)'e Basınız");
             System.out.print("Seçim Yapınız : ");
             Scanner scanner = new Scanner(System.in);
             String select = scanner.nextLine();
@@ -60,9 +61,17 @@ public class Main {
                 System.out.println("Usd : " + Bank.usdTLCurrencyConvert(usd) + " Tl");
 
             } else if (select.equals("4")) {
+                System.out.print("Hesaplar");
+                bank.showInfo();
+
+                System.out.print("Kapatmak İstediğiniz Hesabın Hesap Numarasını Giriniz : ");
+                String control = scanner.nextLine();
+                bank.accountClose(control);
+            } else if (select.equals("5")) {
                 System.out.println("Çıkış Yapılıyor...");
                 break;
-            } else {
+            }
+            else {
                 System.out.println("Geçersiz Seçim yaptınız");
             }
         }

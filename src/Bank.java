@@ -1,3 +1,9 @@
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.stream.Stream;
+
 public class Bank {
     private String name;
     private String headOfficeLocation;
@@ -8,6 +14,7 @@ public class Bank {
     public Bank(String name, String headOfficeLocation) {
         this.name = name;
         this.headOfficeLocation = headOfficeLocation;
+
     }
 
     public String getName() {
@@ -34,6 +41,9 @@ public class Bank {
         return accounts;
     }
 
+    public int getHesapsayisi() {
+        return hesapsayisi;
+    }
 
     public void accountAdd(Account account) {
         try {
@@ -44,12 +54,33 @@ public class Bank {
         }
 
     }
+    public void accountClose(Account account){
+        for (int i = 0; i < hesapsayisi; i++) {
+            if (accounts[i].equals(account)){
+                accounts[i] = null;
+                hesapsayisi--;
+            }
+        }
+    }
+    public  void  accountClose(String accountNumber){
+        for (int i = 0; i < hesapsayisi; i++) {
+            if (accounts[i].getAccountNumber().equals(accountNumber)){
+                accounts[i] = null;
+            }
+        }hesapsayisi--;
+
+    }
 
     public boolean moneyTransfer(String senderAccountNumber, String buyerAccountNumber,double amount) {
         double senderBalance = 0.0;
         boolean status = false;
         for (int i = 0; i < hesapsayisi; i++) {
-            if (accounts[i].getAccountNumber().equals(senderAccountNumber) && accounts[i].getBalance() >= amount) {
+            if (accounts[i].getAccountNumber().equals(senderAccountNumber) && accounts[i].getBalance() >= amount && accounts[i].getAccountType().equals("USD")) {
+                senderBalance = Bank.usdTLCurrencyConvert(amount);
+                accounts[i].setBalance(accounts[i].getBalance()-amount);
+                status = true;
+            }
+            else {
                 senderBalance = amount;
                 accounts[i].setBalance(accounts[i].getBalance()-amount);
                 status = true;
@@ -73,8 +104,11 @@ public class Bank {
         System.out.println("Banka merkez Ofisi : " + this.headOfficeLocation);
         System.out.println("Bankada Bulunan Hesap Sayısı : " + this.hesapsayisi);
         System.out.println("\n***********Banka hesap sahibi müşteriler**************\n");
-        for (int i = 0; i < hesapsayisi; i++) {
-            accounts[i].showInfo();
+        for (int i = 0; i < accounts.length; i++) {
+            if (accounts[i] != null){
+                accounts[i].showInfo();
+            }
+
             System.out.println("^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-^-");
         }
     }
